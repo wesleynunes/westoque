@@ -2,7 +2,9 @@
 
 class Painel extends CI_Controller
 {
-
+    /*
+   * Carregar helper, library, model.
+   */
     public function __construct()
     {
         parent::__construct();
@@ -19,44 +21,44 @@ class Painel extends CI_Controller
 
     public function index()
     {
-        $this->parser->parse('home_view'); 
+        $this->parser->parse('home_view');
     }
-    
-    
+
+
     /**
-    * função privata para setar urls listar e salvar  
+    * funï¿½ï¿½o privata para setar urls listar e salvar
     */
     private function setURL(&$data) {
-        $data['URLLISTAR']  = base_url('painel/painel'); 
+        $data['URLLISTAR']  = base_url('painel/painel');
         $data['HOME']       = base_url('home');
-    } 
+    }
 
 
     /**
-    * função publica para acidionar novo fornecedor
+    * funï¿½ï¿½o publica para acidionar novo fornecedor
     * Variavel ACAO notificar a acao que sera ocorrida
     */
-    public function painel(){    
+    public function painel(){
 
        $data                            = array();
        $data['ACAO']                    = 'Adicionar';
-       $data['FORNECEDOR']              = 'Fornecedor';    
+       $data['FORNECEDOR']              = 'Fornecedor';
 
        $this->setURL($data);
-     
+
        $this->parser->parse('home_view', $data);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
